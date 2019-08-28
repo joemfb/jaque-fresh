@@ -407,6 +407,7 @@ public class NounLibraryTest {
   }
 
   // (5x + 1) % 5 == 1
+  // java.lang.AssertionError: Unexpected error in property incMulMod with args [0] and seeds [3932690329607299869]
   @Property
   public void incMulMod(
     @From(AtomLGenerator.class) Object a
@@ -418,6 +419,8 @@ public class NounLibraryTest {
   public void lshRsh(
     // chop ArrayIndexOutOfBounds
     //  with args [false, 32, 8] and seeds [3372070853209715358, 7255190033216352256, -2934053497159410079]
+
+    // with args [-51, 33, 3] and seeds [8009547998480065240, -4930187859339121437, 1423958799303468481]
 
     //  with args [1437614177, 33, 0] and seeds [7666169638092545818, 1652637183580198143, -4634777146194345582]
     //
