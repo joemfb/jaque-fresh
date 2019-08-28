@@ -160,32 +160,28 @@ public final class WordAtoms {
 
   // note: you can decrement a word array under BigAtom.MINIMUM with this.
   public static int[] decrementInPlace(int[] vol) {
-    boolean carry = true;
+    boolean carry;
+    int i = 0;
 
-    for ( int i = 0; carry && (i < vol.length); i++ ) {
-      carry = 0 == vol[i];
+    do {
+      carry = (0 == vol[i]);
       vol[i] -= 1;
-    }
 
-    return malt(vol);
+      if ( (1 + i) == vol.length ) {
+        if ( 0 == vol[i] ) {
+          vol = Arrays.copyOfRange(vol, 0, i);
+        }
+        break;
+      }
 
-    // for ( int i = 0; i < vol.length; i++ ) {
-    //   if ( 0 == vol[i] ) {
-    //     int[] smaller = new int[vol.length - 1];
-    //     Arrays.fill(smaller, 0xFFFFFFFF);
-    //     return smaller;
-    //   }
-    //   else {
-    //     vol[i] -= 1;
-    //   }
-    // }
-    // return vol;
+      i++;
+    } while ( carry );
+
+    return vol;
   }
 
   public static int[] dec(int[] a) {
-    int[] w = Arrays.copyOf(a, a.length);
-    w = decrementInPlace(w);
-    return w;
+    return decrementInPlace(Arrays.copyOf(a, a.length));
   }
 
   public static int met(byte bloq, int[] w)  {

@@ -232,7 +232,7 @@ public class NounLibraryTest {
 
   @Test
   public void testBigDec() throws ExitException {
-    assertEquals(0xffffffffffffffffL, nouns.dec(BigAtomL.MINIMUM));
+    assertNounEquals(0xffffffffffffffffL, nouns.dec(BigAtomL.MINIMUM));
 
     Object a = new BigAtomL(new int[]{ 0, 0, 32 });
     Object b = new BigAtomL(new int[]{ 0xffffffff, 0xffffffff, 31 });
