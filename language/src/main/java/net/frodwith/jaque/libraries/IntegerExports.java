@@ -211,7 +211,6 @@ final class IntegerExports {
         case 1:
           return a - c;
         default:
-          System.out.println("shouldn't be possible");
           throw new ExitException("subtract underflow");
       }
     }

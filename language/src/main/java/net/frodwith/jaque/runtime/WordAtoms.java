@@ -242,7 +242,6 @@ public final class WordAtoms {
     int[] dst = new int[s.len];
     int bor = MPN.sub_n(dst, s.x, s.y, s.len);
     if ( bor != 0 ) {
-      System.out.println("borrow " + bor);
       throw new ExitException("subtract underflow");
     }
     return malt(dst);

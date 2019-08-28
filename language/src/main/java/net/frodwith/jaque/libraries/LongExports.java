@@ -217,10 +217,6 @@ final class LongExports {
         return a - c;
       }
       else {
-        System.out.println("a: " + a + " bits: " + Long.toUnsignedString(a, 2));
-        System.out.println("b: " + b); // + " bits: " + Long.toUnsignedString(a, 2));
-        System.out.println("c: " + c + " bits: " + Long.toUnsignedString(c, 2));
-        System.out.println("also shouldn't be possible");
         throw new ExitException("subtract underflow");
       }
     }
