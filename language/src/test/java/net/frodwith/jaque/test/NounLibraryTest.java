@@ -407,7 +407,6 @@ public class NounLibraryTest {
   }
 
   // (5x + 1) % 5 == 1
-  // java.lang.AssertionError: Unexpected error in property incMulMod with args [0] and seeds [3932690329607299869]
   @Property
   public void incMulMod(
     @From(AtomLGenerator.class) Object a

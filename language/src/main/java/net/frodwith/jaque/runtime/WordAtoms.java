@@ -460,6 +460,10 @@ public final class WordAtoms {
         ylen = y.length;
     int[] dest = new int[xlen + ylen];
 
+    if ( ( 0 == xlen ) || ( 0 == ylen ) ) {
+      return dest;
+    }
+
     if ( xlen < ylen ) {
       int zlen = xlen;
       int[] z = x;
